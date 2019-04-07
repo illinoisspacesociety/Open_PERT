@@ -1,5 +1,5 @@
 from itertools import count
-from datetime import datetime, timedelta
+from datetime import datetime
 
 
 class Node:
@@ -8,7 +8,8 @@ class Node:
 
     def __init__(self):
         self.registry.append(self)
-        self.name = next(self._ids)
+        self.name = str(next(self._ids))
+        self.label = str(self.name)
         self.dur = 0
         self.dep = []
         self.crit = []
@@ -17,6 +18,8 @@ class Node:
         self.end = datetime.date
         self.x = 0
         self.y = 0
-        self.cx = 0
-        self.cy = 0
+        self.ix = 0
+        self.iy = 0
+        self.ox = 0
+        self.oy = 0
         self.tasks = []
